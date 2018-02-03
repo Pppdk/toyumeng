@@ -167,9 +167,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #header .slogan{
-	font-size: 8em;
+	font-size: 6em;
 	margin-bottom: 5em;
-	line-height: 0.3em;
+	line-height: 0.8em;
 	margin-left: 1em;
 	font-family: Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
 	color: white;
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6{
 
 #header .secondary-slogan{
 	font-size: 1.6em;
-	color: rgba(255,255,255,.5);
+	color: white;
 	line-height: 3em;
 	margin-left: 1.5em;
 	
@@ -418,11 +418,11 @@ h1, h2, h3, h4, h5, h6{
 
 @media (max-width: 767px){
 	#header .slogan {
-		font-size: 8em; 
+		font-size: 7em; 
 	} 
 
 	#header .secondary-slogan {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 
 
