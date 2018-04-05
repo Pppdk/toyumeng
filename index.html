@@ -29,13 +29,12 @@
 			var time=new Date();
 			var timeNow=time.getTime(); 
 			var d_seconds=parseInt((timeNow-1508028300000)/1000);
-			var d_days = parseInt(d_seconds / 86400); //获取当前系统的时间  
-			var d_hours = parseInt(d_seconds%86400 / 3600);
-			var d_minutes = parseInt(d_seconds%86400%3600 / 60);
+			var d_days = parseInt(d_seconds / 86400); //获取当前系统的时间  
+			var d_hours = parseInt(d_seconds%86400 / 3600);
+			var d_minutes = parseInt(d_seconds%86400%3600 / 60);
 			var miao = parseInt(d_seconds%86400%3600%60);
 			var y=time.getFullYear();//获得4位的年  
 			var m=time.getMonth()+1;//月份（0-11） 
-
 			var l=m<10?"0"+m:m;//将得到的月份数中小于10的月份表示为两位（01,02）  
 			var d=time.getDate();//得到天数  
 			var h=time.getHours();//获得小时数  
@@ -43,89 +42,15 @@
 			var s=time.getSeconds()>9?time.getSeconds():"0"+time.getSeconds();//将秒数小于10的处理为两位  
 			//alert(time);  
 			//alert(y+m+d+h+s1+s);  
-			var t=d_days +"天"+d_hours +"小时"+d_minutes+"分";
-			var k=miao+"'"//格式得到的系统时间  
+			var t="第"+d_days +"天"+d_hours +"小时"+d_minutes+"分";
+			var k=miao+"秒"//格式得到的系统时间  
 			var b=document.getElementById("pdk");
 			var c=document.getElementById("ppdk");//根据id获取页面上的一个元素对象  
 			b.innerHTML=t;
-			c.innerHTML=k; 
+			c.innerHTML=k;//将格式化的时间写到div中  
 			setTimeout(showTime,1000);//动态更新时间  
-
 			}  
-		</script>
-		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
-		</script>
-		<script>
-			$(document).ready(function(){
-				$('.index2').hide()
-				$('#meet').show();
-				$('.tab2').show();
-			    $('.tab1').hide();
-			   $('#love').hide();
-			  $("a").click(function(){
-			   var target = $(this).attr('data-target');
-				  $('.index').hide();
-				  $('.'+target).show();
-
-
-				});
-			$(".tab1").click(function(){ 
-			  $('#header.header-wrapper').css({
-											  'background':'url(assets/images/header-bg.jpg) no-repeat center center',
-											  "background-size":"cover"
-  													});
-			  	 $('.tab2').show();
-			    $('.tab1').hide();
-			   $('#meet').show();
-			   $('#love').hide();
-			   $('html , body').animate({scrollTop: 0},'slow');
-			});
-		 	$(".tab2").click(function(){ 
-			  $('#header.header-wrapper').css({'background':'url(assets/images/header-bg1.jpg) no-repeat center center',
-											  "background-size":"cover"
-  													});
-			   $('.tab1').show();
-			    $('.tab2').hide();
-			  $('#meet').hide();
-			  $('#love').show();
-			  $('html , body').animate({scrollTop: 0},'slow');
-			  lovetime();
-			
-			});
-				  
-						
-		});	
-			function lovetime(){  
-			var time=new Date();
-			var timeNow=time.getTime(); 
-			var d_seconds=parseInt((timeNow-1521910982000)/1000);
-			var d_days = parseInt(d_seconds / 86400); //获取当前系统的时间  
-			var d_hours = parseInt(d_seconds%86400 / 3600);
-			var d_minutes = parseInt(d_seconds%86400%3600 / 60);
-			var miao = parseInt(d_seconds%86400%3600%60);
-			var y=time.getFullYear();//获得4位的年  
-			var m=time.getMonth()+1;//月份（0-11） 
-
-			var l=m<10?"0"+m:m;//将得到的月份数中小于10的月份表示为两位（01,02）  
-			var d=time.getDate();//得到天数  
-			var h=time.getHours();//获得小时数  
-			var s1=time.getMinutes();//分钟数  
-			var s=time.getSeconds()>9?time.getSeconds():"0"+time.getSeconds();//将秒数小于10的处理为两位  
-			//alert(time);  
-			//alert(y+m+d+h+s1+s);  
-			var t=d_days +"天"+d_hours +"小时"+d_minutes+"分";
-			var k=miao+"'"//格式得到的系统时间  
-			
-			var e=document.getElementById("pdk1");
-			var f=document.getElementById("ppdk1");//根据id获取页面上的一个元素对象  
-			e.innerHTML=t;
-			f.innerHTML=k;
-			//将格式化的时间写到div中  
-			setTimeout(lovetime,1000);//动态更新时间
-			
-			}
-		</script>
-		
+		</script>	
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.js"></script>
@@ -139,17 +64,13 @@
 	
 	<body onload="showTime()">
 		
-		<ul>
- 		    <li><a  id='tab1' class="tab1" data-target="index1" active>很高兴遇见你</a></li>
- 		 	<li><a  class="tab2" data-target="index2">还好未曾错过</a></li>
-  			
-		</ul>
 
-		<div id="wrapper"  >
+		<div id="wrapper">
+			
 			<div id="header" class="content-block header-wrapper">
 				<div class="header-wrapper-inner">
 					
-					<section id='meet' class="center">
+					<section class="center">
 						<div class="secondary-slogan" id="pdk">
 							The Flusk Theme By ThemeWagon.
 						</div>
@@ -157,33 +78,20 @@
 						<div class="slogan" id="ppdk">
 							SLIM &amp; STYLISH
 						</div>
-					</section>
-					<section id='love' class="center">
-						<div class="secondary-slogan" id="pdk1">
-							The Flusk Theme By ThemeWagon.
-						</div>
-
-						<div class="slogan" id="ppdk1">
-							SLIM &amp; STYLISH
-						</div>
-					</section>
+					
 				</div>
-			
 			</div><!-- header -->
 
 			
 			
 
-			
-
-			<div class="content-block index index1" id="blog">
-				<div class="content-block parallax" id="services">
+			<div class="content-block parallax" id="services">
 				<div class="container text-center">
 					<header class="block-heading cleafix">
 						<hr>
 						<br><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i>
 						<hr>
-						<h3>11想了很久</h3>
+						<h3 >想了很久</h3>
 						<h3>还是不知道</h3>
 						<h3>怎样开头才好</h3>
 						<h3>不过不管了就这样</h3>
@@ -193,123 +101,23 @@
 						<hr>
 						<br><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i>
 						<hr>
-					</header>
-					
-				</div>
-			</div><!-- #services -->
-
-			<div class="container">
-
-					<section class="block-body">
-						<div class="row">
-							<div class="col-sm-4 blog-post">
-								<img src="assets/images/stock-photo-139964089.jpg">
-								
-								<h3>第一次见你</h3>
-								<h3>我当时就硬了</h3>
-								<h3>我是说</h3>
-								<h3>我心里最柔软的地方</h3>
-								<h3>突然变得坚硬起来</h3>
-								<h3>我知道</h3>
-								<h3>这就是我喜欢的人的样子</h3>
-							</div>
-							<div class="col-sm-4 blog-post">
-								<img src="assets/images/mac_glasses1-1000x600.jpg">
-								<h3>其实</h3>
-								<h3>很久以前</h3>
-								<h3>还没遇见你的时候</h3>
-								<h3>我就喜欢上你了</h3>
-								<h3>很久以后</h3>
-								<h3>当你老了</h3>
-								<h3>我还是很喜欢你</h3>
-								<h3>我的意思是</h3>
-								<h3>我只是在等你而已</h3>
-								<h3>姗姗来迟的你</h3>
-							</div>
-							<div class="col-sm-4 blog-post">
-								<img src="assets/images/road-1000x600.jpg">
-								<h3>虽然</h3>
-								<h3>我只会</h3>
-								<h3>安安静静坐在你旁边</h3>
-								<h3>或者</h3>
-								<h3>跟你说说话</h3>
-								<h3>有意无意</h3>
-								<h3>蹭一下你</h3>
-								<h3>这就是我表达的方式</h3>		
-								<h3>你或许感受不到</h3>
-								<h3>但是没关系</h3>		
-								<h3>我会渐渐藏不住</h3>
-								<h3>直到周围的空气都是</h3>
-								<h3>喜欢你的形状</h3>		
-							</div>
-							<div class="col-sm-4 blog-post">
-								<img src="assets/images/stock-photo-69952143.jpg">
-								<h3>我多喜欢喜欢你的自己</h3>						
-								<h3>自从遇见了你</h3>
-								<h3>我的一切都变得多好</h3>					
-								<h3>就连线代都过了哈哈</h3>
-								<h3>虽然你说你又没有给我抄</h3>
-								<h3>你不知道的是</h3>
-								<h3>你说“我陪你啊”的时候</h3>
-								<h3>我心都化了</h3>
-								<h3>不然</h3>
-								<h3>又怎么能静下来学习</h3>
-								<h3>对吧</h3>
-								<h3>我的幸运女神</h3>	
-							</div>
-								<div class="col-sm-4 blog-post">
-								<img src="assets/images/bike_water1-1000x600.jpg">								
-								<h3>你说</h3>
-								<h3>你25岁都到中年了</h3>
-								<h3>去他妈的中年吧</h3>
-								<h3>你永远是我的小仙女</h3>
-								<h3>对!</h3>
-								<h3>我不管!</h3>					
-								<h3>就是我的!</h3>
-								</div>
-								<div class="col-sm-4 blog-post">
-								<img src="assets/images/stock-photo-145190079.jpg">								
-								<h3>我只想</h3>
-								<h3>以后每一次说再见</h3>
-								<h3>可以变成明天见</h3>
-								<h3>再以后</h3>
-								<h3>变成</h3>
-								<h3>下一次睁眼</h3>		
-								</div>											
 						
-					
-						</section>
-						<div align="center">
-						<br><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i>
-						</div>					
-				</div>
-			</div><!-- #blog -->
 
-				
 
-	<div class="content-block index index2 " id="blog">
-		<div class="content-block parallax" id="services">
-				<div class="container text-center">
-					<header class="block-heading cleafix">
-						<hr>
-						<br><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i>
-						<hr>
-						<h3>11想了很久</h3>
-						<h3>还是不知道</h3>
-						<h3>怎样开头才好</h3>
-						<h3>不过不管了就这样</h3>
-						<h3>反正以后看见它时</h3>
-						<h3>心里也是</h3>
-						<h3>美滋滋的</h3>
-						<hr>
-						<br><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i>
-						<hr>
+						
+
+
+
+
+
 					</header>
 					
 				</div>
 			</div><!-- #services -->
+
+			<div class="content-block" id="blog">
 				<div class="container">
-					
+					<h1>part 1</h1>
 					<section class="block-body">
 						<div class="row">
 							<div class="col-sm-4 blog-post">
@@ -394,9 +202,14 @@
 						</div>					
 				</div>
 			</div><!-- #blog -->
+			
+
 
 			
-<div class="content-block" id="footer">
+
+			
+
+			<div class="content-block" id="footer">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-6">&copy; Copyright Pppdk 2018<br>to 羽蒙小仙女</div>
@@ -406,6 +219,9 @@
 					</div>
 				</div>
 			</div><!-- #footer -->
+
+
+		</div><!--/#wrapper-->
 
 
 
