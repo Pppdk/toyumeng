@@ -21,6 +21,64 @@
 //  01 - Global 
 /////////////////////////////////////////////////////////////////////*/
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 999;
+    background-color:;
+    position: fixed;
+    top: 5;
+    width: 100%;
+	
+
+}
+
+
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 30px;
+    text-decoration: none;
+    
+	
+
+
+}
+li a.tab2{
+	border-radius:2em 0 0 2em;
+}
+li a.tab1{
+	border-radius:0 2em 2em 0;
+}
+li a.tab1:hover:not(.active) {
+    background-color: #68B0BB;
+    opacity:0.9;
+    
+}
+li a.tab2:hover:not(.active) {
+    background-color: #68B0BB;
+    opacity:0.9;
+}
+
+.tab1 {
+    color: #999;
+    float: left;
+    opacity:0.7;
+    background-color: #F2f2f2;
+}
+.tab2{
+	color: #999;
+	float: right;
+	background-color: #F2f2f2;
+	opacity:0.7;
+}
+
+
 * {outline: none !important;}
 
 ::selection {
@@ -105,6 +163,10 @@ h1, h2, h3, h4, h5, h6{
 
 
 #header {	
+	position: relative;
+	padding: 0 !important;
+}
+#header2 {	
 	position: relative;
 	padding: 0 !important;
 }
