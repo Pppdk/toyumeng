@@ -56,25 +56,26 @@ li a.tab1{
 	border-radius:0 2em 2em 0;
 }
 li a.tab1:hover:not(.active) {
-    background-color: #68B0BB;
+    background-color: #f2f2f2;
     opacity:0.9;
-    
+    text-decoration: none;
 }
 li a.tab2:hover:not(.active) {
-    background-color: #68B0BB;
+    background-color: #f2f2f2;
     opacity:0.9;
+    text-decoration: none;
 }
 
 .tab1 {
-    color: #999;
+    color: #fff;
     float: left;
     opacity:0.7;
-    background-color: #F2f2f2;
+    background-color: #68B0BB;
 }
 .tab2{
-	color: #999;
+	color: #fff;
 	float: right;
-	background-color: #F2f2f2;
+	background-color: #68B0BB;
 	opacity:0.7;
 }
 
